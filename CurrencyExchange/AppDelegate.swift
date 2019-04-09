@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        fetchCurrencyList()
         let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         print(paths[0])
+
         return true
     }
     
@@ -75,39 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
-    
-    // get list of possible currency and save it to CoreData if it's not already saved
-    func fetchCurrencyList() {
-        if !UserDefaults.standard.bool(forKey: Strings.HasSaved){
-            Alamofire.request(Strings.APIRequestBuilder(endpoint: Strings.CurrencyList)).responseJSON{
-                response in
-                switch response.result {
-                case .success:
-                    if let json = response.result.value {
-                        let context = self.persistentContainer.viewContext
-                        let result = json as! [String : Any]
-                        let currencies = result["currencies"] as! [String: String]
-                        for (k, v) in currencies{
-                            let currencyEntity = NSEntityDescription.entity(forEntityName: "Currency", in: context)!
-                            let currency = NSManagedObject(entity: currencyEntity, insertInto: context)
-                            currency.setValue(k, forKey: "currency")
-                            currency.setValue(v, forKey: "country")
-                        }
-                        do {
-                            try context.save()
-                            UserDefaults.standard.set(true, forKey: Strings.HasSaved)
-                        } catch(let error) {
-                            UserDefaults.standard.set(false, forKey: Strings.HasSaved)
-                            Utils.alertViewBuilder(message: error.localizedDescription).show()
-                        }
-                        
-                    }
-                case .failure(let error):
-                    Utils.alertViewBuilder(message: error.localizedDescription).show()
-                }
-            }
-        }
-    }
     
     // MARK: - Core Data Saving support
     

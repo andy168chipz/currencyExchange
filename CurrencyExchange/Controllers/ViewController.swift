@@ -40,12 +40,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.inputTextView.delegate = self
         hideKeyboardWhenTappedAround()
         inputTextView.keyboardType = .numberPad
-        retrieveCurrencies()
         inputTextView.text = "Enter amount"
         inputTextView.textColor = UIColor.lightGray
         inputTextView.layer.borderColor = UIColor.black.cgColor
         ratesCollection.delegate = self
         ratesCollection.dataSource = self
+        fetchCurrencyList()
     }
     
     
@@ -131,7 +131,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return cell
     }
     
-    // MARK: get conversions
+    // MARK: get methods
     func fetchExchanges(_ currency: Currency){
         Alamofire.request(Strings.APIRequestBuilder(endpoint: Strings.Live)).responseJSON{
             response in
@@ -182,6 +182,41 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     
+    // get list of possible currency and save it to CoreData if it's not already saved
+    func fetchCurrencyList() {
+        if !UserDefaults.standard.bool(forKey: Strings.HasSaved){
+            Alamofire.request(Strings.APIRequestBuilder(endpoint: Strings.CurrencyList)).responseJSON{
+                response in
+                switch response.result {
+                case .success:
+                    if let json = response.result.value {
+                        let context = self.managedContext!
+                        let result = json as! [String : Any]
+                        let currencies = result["currencies"] as! [String: String]
+                        for (k, v) in currencies{
+                            let currencyEntity = NSEntityDescription.entity(forEntityName: "Currency", in: context)!
+                            let currency = NSManagedObject(entity: currencyEntity, insertInto: context)
+                            currency.setValue(k, forKey: "currency")
+                            currency.setValue(v, forKey: "country")
+                        }
+                        do {
+                            try context.save()
+                            UserDefaults.standard.set(true, forKey: Strings.HasSaved)
+                        } catch(let error) {
+                            UserDefaults.standard.set(false, forKey: Strings.HasSaved)
+                            Utils.alertViewBuilder(message: error.localizedDescription).show()
+                        }
+                        self.retrieveCurrencies()
+                    }
+                case .failure(let error):
+                    Utils.alertViewBuilder(message: error.localizedDescription).show()
+                }
+            }
+        }
+        else {
+            retrieveCurrencies()
+        }
+    }
 }
 
 
