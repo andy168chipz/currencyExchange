@@ -82,7 +82,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return currencyKeys[row]
+        return (currencies[currencyKeys[row]]?.country)! + "(\(currencyKeys[row]))"
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -133,7 +133,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     // MARK: get methods
     func fetchExchanges(_ currency: Currency){
-        Alamofire.request(Strings.APIRequestBuilder(endpoint: Strings.Live)).responseJSON{
+        //TODO change rousce to correct currency
+        Alamofire.request(Strings.APIRequestBuilder(endpoint: Strings.Live, source:"")).responseJSON{
             response in
             switch response.result {
             case .success:
