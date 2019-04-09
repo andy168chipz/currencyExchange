@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0ED1A3A60821EA08800F65E7 /* Pods_CurrencyExchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF55C3A83034611D5CD8D4 /* Pods_CurrencyExchange.framework */; };
-		A134FB90225CDCEF00E1AD6B /* Rate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134FB8C225CDCEE00E1AD6B /* Rate+CoreDataClass.swift */; };
 		A134FB91225CDCEF00E1AD6B /* Currency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134FB8D225CDCEE00E1AD6B /* Currency+CoreDataClass.swift */; };
 		A134FB96225CDDB200E1AD6B /* Currency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134FB94225CDDB200E1AD6B /* Currency+CoreDataProperties.swift */; };
-		A134FB97225CDDB200E1AD6B /* Rate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134FB95225CDDB200E1AD6B /* Rate+CoreDataProperties.swift */; };
+		A134FB9D225CEC2C00E1AD6B /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134FB9C225CEC2C00E1AD6B /* DateExtension.swift */; };
+		A134FBA0225CF3D100E1AD6B /* Rate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134FB9E225CF3D100E1AD6B /* Rate+CoreDataProperties.swift */; };
+		A134FBA1225CF3D100E1AD6B /* Rate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134FB9F225CF3D100E1AD6B /* Rate+CoreDataClass.swift */; };
 		A18059CA225CC55E00ABE8EC /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18059C9225CC55E00ABE8EC /* Strings.swift */; };
 		A18059CD225CCC0900ABE8EC /* CurrencyExchange.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A18059CB225CCC0900ABE8EC /* CurrencyExchange.xcdatamodeld */; };
 		A187141C225CB0BE006017F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187141B225CB0BE006017F3 /* AppDelegate.swift */; };
@@ -36,10 +37,11 @@
 
 /* Begin PBXFileReference section */
 		6E54EAA2F37C91EE1990A7A3 /* Pods-CurrencyExchange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyExchange.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyExchange/Pods-CurrencyExchange.release.xcconfig"; sourceTree = "<group>"; };
-		A134FB8C225CDCEE00E1AD6B /* Rate+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rate+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A134FB8D225CDCEE00E1AD6B /* Currency+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A134FB94225CDDB200E1AD6B /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Currency+CoreDataProperties.swift"; path = "/Users/andy/Documents/currency/CurrencyExchange/CurrencyExchange/Model/Currency+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		A134FB95225CDDB200E1AD6B /* Rate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Rate+CoreDataProperties.swift"; path = "/Users/andy/Documents/currency/CurrencyExchange/CurrencyExchange/Model/Rate+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		A134FB9C225CEC2C00E1AD6B /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		A134FB9E225CF3D100E1AD6B /* Rate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Rate+CoreDataProperties.swift"; path = "../../Rate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A134FB9F225CF3D100E1AD6B /* Rate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Rate+CoreDataClass.swift"; path = "../../Rate+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A18059C9225CC55E00ABE8EC /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		A18059CC225CCC0900ABE8EC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A1871418225CB0BE006017F3 /* CurrencyExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 				A18059C9225CC55E00ABE8EC /* Strings.swift */,
 				A187143F225CBFDE006017F3 /* Utils.swift */,
 				A1871441225CC024006017F3 /* UIViewControllerExtension.swift */,
+				A134FB9C225CEC2C00E1AD6B /* DateExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -153,10 +156,10 @@
 		A1871443225CC1DC006017F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A134FB9F225CF3D100E1AD6B /* Rate+CoreDataClass.swift */,
+				A134FB9E225CF3D100E1AD6B /* Rate+CoreDataProperties.swift */,
 				A134FB94225CDDB200E1AD6B /* Currency+CoreDataProperties.swift */,
-				A134FB95225CDDB200E1AD6B /* Rate+CoreDataProperties.swift */,
 				A134FB8D225CDCEE00E1AD6B /* Currency+CoreDataClass.swift */,
-				A134FB8C225CDCEE00E1AD6B /* Rate+CoreDataClass.swift */,
 				A18059CB225CCC0900ABE8EC /* CurrencyExchange.xcdatamodeld */,
 			);
 			path = Model;
@@ -312,16 +315,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A134FB90225CDCEF00E1AD6B /* Rate+CoreDataClass.swift in Sources */,
 				A187141E225CB0BE006017F3 /* ViewController.swift in Sources */,
 				A1871442225CC024006017F3 /* UIViewControllerExtension.swift in Sources */,
 				A18059CD225CCC0900ABE8EC /* CurrencyExchange.xcdatamodeld in Sources */,
 				A187141C225CB0BE006017F3 /* AppDelegate.swift in Sources */,
 				A18059CA225CC55E00ABE8EC /* Strings.swift in Sources */,
+				A134FB9D225CEC2C00E1AD6B /* DateExtension.swift in Sources */,
 				A134FB96225CDDB200E1AD6B /* Currency+CoreDataProperties.swift in Sources */,
 				A134FB91225CDCEF00E1AD6B /* Currency+CoreDataClass.swift in Sources */,
+				A134FBA1225CF3D100E1AD6B /* Rate+CoreDataClass.swift in Sources */,
 				A1871440225CBFDE006017F3 /* Utils.swift in Sources */,
-				A134FB97225CDDB200E1AD6B /* Rate+CoreDataProperties.swift in Sources */,
+				A134FBA0225CF3D100E1AD6B /* Rate+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

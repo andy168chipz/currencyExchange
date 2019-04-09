@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class Utils{
     static func alertViewBuilder(message: String) -> UIAlertView{

@@ -7,11 +7,12 @@
         <relationship name="rate" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Rate" inverseName="currency" inverseEntity="Rate" syncable="YES"/>
     </entity>
     <entity name="Rate" representedClassName="Rate" syncable="YES">
-        <attribute name="rate" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="currencyCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="currency" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Currency" inverseName="rate" inverseEntity="Currency" syncable="YES"/>
     </entity>
     <elements>
         <element name="Currency" positionX="-317.578125" positionY="-84.07421875" width="117.4296875" height="105"/>
-        <element name="Rate" positionX="-63" positionY="9" width="128" height="75"/>
+        <element name="Rate" positionX="-63" positionY="9" width="128" height="90"/>
     </elements>
 </model>

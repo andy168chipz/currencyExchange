@@ -21,9 +21,11 @@ struct Strings{
     
     static var AccessKey = "?access_key=\(API_KEY)"
     
-    static func APIRequestBuilder(endpoint: String) -> String{
-        return ServerHost + endpoint + AccessKey
+    static func APIRequestBuilder(endpoint: String, source: String = "") -> String{
+        return ServerHost + endpoint + AccessKey + source
     }
     
     static var HasSaved = "HasSaved"
+    
+    static var Live = "live"
 }
