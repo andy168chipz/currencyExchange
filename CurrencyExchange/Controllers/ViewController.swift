@@ -90,6 +90,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let currency = currencies[currencyKeys[row]]
         if let rates = currency?.rate?.array as? [Rate]{
             self.rates = rates
+            self.rates.sort(by: {$0.currencyCode!.compare($1.currencyCode!) == .orderedAscending})
             ratesCollection.reloadData()
         }
     }
@@ -106,6 +107,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if textView.text.isEmpty {
             textView.text = "Enter amount"
             textView.textColor = UIColor.lightGray
+        } else {
+            ratesCollection.reloadData()
         }
     }
     
@@ -116,8 +119,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView
-            .dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .black
+            .dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RateCell
+        let rate = rates[indexPath.item]
+        cell.countryLabel.text = rate.currencyCode
+        if inputTextView.text != "Enter amount"{
+            cell.rateLabel.text = String(rate.rate * Double(inputTextView.text)!)
+        } else {
+            cell.rateLabel.text = String(rate.rate)
+        }
+        cell.layer.borderColor = UIColor.black.cgColor
         return cell
     }
     
@@ -132,6 +142,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     let result = json as! [String : Any]
                     let currencies = result["quotes"] as! [String: Double]
                     currency.created = NSDate()
+                    currency.mutableOrderedSetValue(forKey: "rate").removeAllObjects()
                     //update timestamp
                     for (k, v) in currencies{
                         let rate = Rate(context: context)
@@ -142,6 +153,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     }
                     do {
                         try context.save()
+                        self.currencyPicker.delegate?.pickerView?(self.currencyPicker, didSelectRow: self.currencyPicker.selectedRow(inComponent: 0), inComponent: 0)
                     } catch(let error) {
                         Utils.alertViewBuilder(message: error.localizedDescription).show()
                     }
@@ -169,18 +181,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-//    func retrieveCurrency(_ key: String){
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Currency")
-//        do {
-//            let result = try managedContext?.fetch(fetchRequest)
-//            for data in result as! [NSManagedObject] {
-//                currencies[data.value(forKey:"currency") as! String] = (data as! Currency)
-//            }
-//            currencyKeys = Array(currencies.keys)
-//            currencyPicker.reloadAllComponents()
-//        } catch(let error) {
-//            Utils.alertViewBuilder(message: error.localizedDescription).show()
-//        }
-//    }
+    
 }
+
 

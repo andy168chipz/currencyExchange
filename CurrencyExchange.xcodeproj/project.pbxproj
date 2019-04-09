@@ -13,6 +13,7 @@
 		A134FB9D225CEC2C00E1AD6B /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134FB9C225CEC2C00E1AD6B /* DateExtension.swift */; };
 		A134FBA0225CF3D100E1AD6B /* Rate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134FB9E225CF3D100E1AD6B /* Rate+CoreDataProperties.swift */; };
 		A134FBA1225CF3D100E1AD6B /* Rate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134FB9F225CF3D100E1AD6B /* Rate+CoreDataClass.swift */; };
+		A134FBA3225D009600E1AD6B /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134FBA2225D009600E1AD6B /* RateCell.swift */; };
 		A18059CA225CC55E00ABE8EC /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18059C9225CC55E00ABE8EC /* Strings.swift */; };
 		A18059CD225CCC0900ABE8EC /* CurrencyExchange.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A18059CB225CCC0900ABE8EC /* CurrencyExchange.xcdatamodeld */; };
 		A187141C225CB0BE006017F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187141B225CB0BE006017F3 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 		A134FB9C225CEC2C00E1AD6B /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		A134FB9E225CF3D100E1AD6B /* Rate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Rate+CoreDataProperties.swift"; path = "../../Rate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A134FB9F225CF3D100E1AD6B /* Rate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Rate+CoreDataClass.swift"; path = "../../Rate+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A134FBA2225D009600E1AD6B /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
 		A18059C9225CC55E00ABE8EC /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		A18059CC225CCC0900ABE8EC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A1871418225CB0BE006017F3 /* CurrencyExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				A187141D225CB0BE006017F3 /* ViewController.swift */,
+				A134FBA2225D009600E1AD6B /* RateCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				A18059CD225CCC0900ABE8EC /* CurrencyExchange.xcdatamodeld in Sources */,
 				A187141C225CB0BE006017F3 /* AppDelegate.swift in Sources */,
 				A18059CA225CC55E00ABE8EC /* Strings.swift in Sources */,
+				A134FBA3225D009600E1AD6B /* RateCell.swift in Sources */,
 				A134FB9D225CEC2C00E1AD6B /* DateExtension.swift in Sources */,
 				A134FB96225CDDB200E1AD6B /* Currency+CoreDataProperties.swift in Sources */,
 				A134FB91225CDCEF00E1AD6B /* Currency+CoreDataClass.swift in Sources */,
