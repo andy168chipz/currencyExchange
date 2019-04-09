@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var currencyPicker: UIPickerView!
+    @IBOutlet weak var inputTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
 
