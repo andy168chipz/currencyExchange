@@ -19,23 +19,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVe-5q-HV3" userLabel="currencyPicker">
-                                <rect key="frame" x="0.0" y="20" width="150" height="50"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="5zW-Cq-zQ8"/>
-                                    <constraint firstAttribute="width" constant="150" id="bcI-Ex-af9"/>
+                                    <constraint firstAttribute="height" constant="200" id="5zW-Cq-zQ8"/>
                                 </constraints>
                             </pickerView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="100" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="dCc-oU-U28" userLabel="inputTextView">
-                                <rect key="frame" x="167" y="20" width="208" height="46"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="dCc-oU-U28" userLabel="inputTextView">
+                                <rect key="frame" x="0.0" y="220" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="3K9-9I-goX"/>
+                                    <constraint firstAttribute="height" constant="50" id="aWM-gz-vtH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="tel"/>
                             </textView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OLr-WC-hJM">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="270" width="375" height="397"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vh7-hb-6OS">
                                     <size key="itemSize" width="50" height="50"/>
@@ -60,13 +59,14 @@
                             <constraint firstItem="zVe-5q-HV3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1A0-Cm-fDx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OLr-WC-hJM" secondAttribute="trailing" id="BJ8-kB-U6D"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OLr-WC-hJM" secondAttribute="bottom" id="FWG-AM-byU"/>
-                            <constraint firstItem="OLr-WC-hJM" firstAttribute="top" secondItem="zVe-5q-HV3" secondAttribute="bottom" id="GSU-YE-zuP"/>
-                            <constraint firstItem="dCc-oU-U28" firstAttribute="leading" secondItem="zVe-5q-HV3" secondAttribute="trailing" constant="17" id="eb4-GQ-Ez4"/>
+                            <constraint firstItem="OLr-WC-hJM" firstAttribute="top" secondItem="dCc-oU-U28" secondAttribute="bottom" id="GSU-YE-zuP"/>
+                            <constraint firstItem="zVe-5q-HV3" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Iv7-5D-X0w"/>
+                            <constraint firstItem="dCc-oU-U28" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eb4-GQ-Ez4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="zVe-5q-HV3" secondAttribute="leading" id="lnW-je-tc3"/>
                             <constraint firstItem="dCc-oU-U28" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uPm-5n-fhq"/>
                             <constraint firstItem="OLr-WC-hJM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wSn-E3-JJQ"/>
                             <constraint firstItem="OLr-WC-hJM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yV2-eg-QpA"/>
-                            <constraint firstItem="dCc-oU-U28" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zyi-bh-UKA"/>
+                            <constraint firstItem="dCc-oU-U28" firstAttribute="top" secondItem="zVe-5q-HV3" secondAttribute="bottom" id="zyi-bh-UKA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
