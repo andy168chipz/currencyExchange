@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0ED1A3A60821EA08800F65E7 /* Pods_CurrencyExchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF55C3A83034611D5CD8D4 /* Pods_CurrencyExchange.framework */; };
+		A18059CA225CC55E00ABE8EC /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18059C9225CC55E00ABE8EC /* Strings.swift */; };
+		A18059CD225CCC0900ABE8EC /* CurrencyExchange.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A18059CB225CCC0900ABE8EC /* CurrencyExchange.xcdatamodeld */; };
 		A187141C225CB0BE006017F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187141B225CB0BE006017F3 /* AppDelegate.swift */; };
 		A187141E225CB0BE006017F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187141D225CB0BE006017F3 /* ViewController.swift */; };
 		A1871421225CB0BE006017F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A187141F225CB0BE006017F3 /* Main.storyboard */; };
-		A1871424225CB0BE006017F3 /* CurrencyExchange.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1871422225CB0BE006017F3 /* CurrencyExchange.xcdatamodeld */; };
 		A1871426225CB0BF006017F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1871425225CB0BF006017F3 /* Assets.xcassets */; };
 		A1871429225CB0BF006017F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1871427225CB0BF006017F3 /* LaunchScreen.storyboard */; };
 		A1871434225CB0BF006017F3 /* CurrencyExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1871433225CB0BF006017F3 /* CurrencyExchangeTests.swift */; };
@@ -31,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		6E54EAA2F37C91EE1990A7A3 /* Pods-CurrencyExchange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyExchange.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyExchange/Pods-CurrencyExchange.release.xcconfig"; sourceTree = "<group>"; };
+		A18059C9225CC55E00ABE8EC /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		A18059CC225CCC0900ABE8EC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A1871418225CB0BE006017F3 /* CurrencyExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A187141B225CB0BE006017F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A187141D225CB0BE006017F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 		A187143E225CBFBF006017F3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A18059C9225CC55E00ABE8EC /* Strings.swift */,
 				A187143F225CBFDE006017F3 /* Utils.swift */,
 				A1871441225CC024006017F3 /* UIViewControllerExtension.swift */,
 			);
@@ -133,6 +137,7 @@
 		A1871443225CC1DC006017F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A18059CB225CCC0900ABE8EC /* CurrencyExchange.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,10 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1871424225CB0BE006017F3 /* CurrencyExchange.xcdatamodeld in Sources */,
 				A187141E225CB0BE006017F3 /* ViewController.swift in Sources */,
 				A1871442225CC024006017F3 /* UIViewControllerExtension.swift in Sources */,
+				A18059CD225CCC0900ABE8EC /* CurrencyExchange.xcdatamodeld in Sources */,
 				A187141C225CB0BE006017F3 /* AppDelegate.swift in Sources */,
+				A18059CA225CC55E00ABE8EC /* Strings.swift in Sources */,
 				A1871440225CBFDE006017F3 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45846M8UYA;
 				INFOPLIST_FILE = CurrencyExchange/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -476,6 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45846M8UYA;
 				INFOPLIST_FILE = CurrencyExchange/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -562,6 +570,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		A18059CB225CCC0900ABE8EC /* CurrencyExchange.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A18059CC225CCC0900ABE8EC /* Model.xcdatamodel */,
+			);
+			currentVersion = A18059CC225CCC0900ABE8EC /* Model.xcdatamodel */;
+			path = CurrencyExchange.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		A1871422225CB0BE006017F3 /* CurrencyExchange.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

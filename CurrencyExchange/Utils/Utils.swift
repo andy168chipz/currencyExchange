@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import UIKit
+
+class Utils{
+    static func alertViewBuilder(message: String) -> UIAlertView{
+        return UIAlertView(title: "Error",message: message, delegate: nil, cancelButtonTitle: "OK")
+    }
+}
