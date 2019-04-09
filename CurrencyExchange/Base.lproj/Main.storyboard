@@ -25,7 +25,7 @@
                                 </constraints>
                             </pickerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="dCc-oU-U28" userLabel="inputTextView">
-                                <rect key="frame" x="0.0" y="220" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="220" width="329" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="aWM-gz-vtH"/>
@@ -53,17 +53,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gu-3w-JBU" userLabel="Go">
+                                <rect key="frame" x="329" y="220" width="30" height="50"/>
+                                <state key="normal" title="GO"/>
+                                <connections>
+                                    <action selector="goPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ig5-2V-Bit"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zVe-5q-HV3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1A0-Cm-fDx"/>
+                            <constraint firstItem="7gu-3w-JBU" firstAttribute="leading" secondItem="dCc-oU-U28" secondAttribute="trailing" id="2Pc-Bv-J5A"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OLr-WC-hJM" secondAttribute="trailing" id="BJ8-kB-U6D"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OLr-WC-hJM" secondAttribute="bottom" id="FWG-AM-byU"/>
                             <constraint firstItem="OLr-WC-hJM" firstAttribute="top" secondItem="dCc-oU-U28" secondAttribute="bottom" id="GSU-YE-zuP"/>
                             <constraint firstItem="zVe-5q-HV3" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Iv7-5D-X0w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7gu-3w-JBU" secondAttribute="trailing" constant="16" id="Jh7-y4-Ese"/>
+                            <constraint firstItem="OLr-WC-hJM" firstAttribute="top" secondItem="7gu-3w-JBU" secondAttribute="bottom" id="YD9-93-E8d"/>
                             <constraint firstItem="dCc-oU-U28" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eb4-GQ-Ez4"/>
+                            <constraint firstItem="7gu-3w-JBU" firstAttribute="top" secondItem="zVe-5q-HV3" secondAttribute="bottom" id="ksw-az-c0m"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="zVe-5q-HV3" secondAttribute="leading" id="lnW-je-tc3"/>
-                            <constraint firstItem="dCc-oU-U28" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uPm-5n-fhq"/>
+                            <constraint firstItem="dCc-oU-U28" firstAttribute="trailing" secondItem="7gu-3w-JBU" secondAttribute="leading" id="uPm-5n-fhq"/>
                             <constraint firstItem="OLr-WC-hJM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wSn-E3-JJQ"/>
                             <constraint firstItem="OLr-WC-hJM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yV2-eg-QpA"/>
                             <constraint firstItem="dCc-oU-U28" firstAttribute="top" secondItem="zVe-5q-HV3" secondAttribute="bottom" id="zyi-bh-UKA"/>
@@ -72,7 +83,9 @@
                     </view>
                     <connections>
                         <outlet property="currencyPicker" destination="zVe-5q-HV3" id="1oX-ai-Y0I"/>
+                        <outlet property="goButton" destination="7gu-3w-JBU" id="lJ4-wM-hub"/>
                         <outlet property="inputTextView" destination="dCc-oU-U28" id="aiw-ja-N5f"/>
+                        <outlet property="ratesCollection" destination="OLr-WC-hJM" id="zh2-vS-Hg8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

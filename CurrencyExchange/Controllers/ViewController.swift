@@ -9,11 +9,14 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate{
-
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var ratesCollection: UICollectionView!
     @IBOutlet weak var currencyPicker: UIPickerView!
     @IBOutlet weak var inputTextView: UITextView!
     
+    let reuseIdentifier = "reuse"
     var currencies = [String: String]()
     var currencyKeys = [String]()
     
@@ -50,9 +53,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 currencies[data.value(forKey: "country") as! String] = (data.value(forKey: "currency") as! String)
             }
             currencyKeys = Array(currencies.keys).sorted()
+            currencyPicker.reloadAllComponents()
         } catch(let error) {
             Utils.alertViewBuilder(message: error.localizedDescription).show()
         }
+    }
+    
+    // MARK: Go Pressed
+    @IBAction func goPressed(_ sender: Any) {
+        
     }
     
     // MARK: picker view misc
@@ -68,6 +77,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return currencyKeys[row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(currencyKeys[row])
+    }
+    
     // MARK: textview stuff
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
@@ -81,6 +94,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             textView.text = "Enter amount"
             textView.textColor = UIColor.lightGray
         }
+    }
+    
+    // MARK: Collectionview stuff
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        cell.backgroundColor = .black
+        
+        return cell
     }
 }
 
