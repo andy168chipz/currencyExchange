@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVe-5q-HV3" userLabel="currencyPicker">
-                                <rect key="frame" x="0.0" y="20" width="118" height="50"/>
+                                <rect key="frame" x="0.0" y="20" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5zW-Cq-zQ8"/>
-                                    <constraint firstAttribute="width" constant="118" id="bcI-Ex-af9"/>
+                                    <constraint firstAttribute="width" constant="150" id="bcI-Ex-af9"/>
                                 </constraints>
                             </pickerView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="0" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="dCc-oU-U28" userLabel="inputTextView">
-                                <rect key="frame" x="135" y="20" width="240" height="46"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="100" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="dCc-oU-U28" userLabel="inputTextView">
+                                <rect key="frame" x="167" y="20" width="208" height="46"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="3K9-9I-goX"/>
